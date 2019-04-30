@@ -1,0 +1,47 @@
+extends app/jade/layout.jade
+
+//- Call variables in your content like this: #{longName} 
+block applyClientBrand
+  - var clientName            = 'Client Name'  
+  - var headerBackgroundColor = '#111111'
+  - var headerTextColor       = '#ffffff'
+  - var linkColor             = 'blue'
+  - var linkColorHover        = 'blue'
+  
+//- Edit the file below if you want to change 
+    The navigation of the style guide
+block navigation
+  nav#main-nav
+    ul.nav
+      li
+        a.nav-link(href='#logo') Logo
+      li
+        a.nav-link(href='#logo-configuration') Configuration
+      li
+        a.nav-link(href='#color-palette') Color
+      li
+        a.nav-link(href='#typography') Typography
+      li
+        a.nav-link(href='#email-signature') Email Signature
+      li
+        a.nav-link(href='#document-system') Document System
+
+
+//- If you want to update the content of the guidelines
+    then edit the corresponding file below. 
+    The order they appear below is the order they will
+    show up on the screen.
+block content
+  //- Logo
+  include guidelines/01-logo.jade
+  //- Configurations
+  include guidelines/02-logo-configuration.jade
+  //- Color
+  include guidelines/03-color.jade
+  //- Typography
+  include guidelines/04-typography.jade
+  //- Email Signature
+  include guidelines/05-email-signature.jade
+  //- Stationery Package
+  include guidelines/06-document-system.jade
+

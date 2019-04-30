@@ -1,0 +1,81 @@
+//- # Create a combined style strings.  This makes the inline styles way easier to read #}
+  | {% set font_styles = &apos;font-family:&apos;~font_stack~&apos;;font-style&apos;~font_style~&apos;;font-size:&apos;~font_size~&apos;;color:&apos;~text_color %}
+  | {% set font_styles_link = &apos;font-family:&apos;~font_stack~&apos;;font-style&apos;~font_style~&apos;;font-size:&apos;~font_size~&apos;;color:&apos;~link_color~&apos;;text-decoration:none&apos; %}
+  | {#  Your Design goes here! #}
+
+//- Extend the email signature guidelines because that's where
+    the variables are defined!
+include ../../brand-files/email-signature/variables
+#write
+
+meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+meta(name='format-detection', content='telephone=no')
+table#sig(width='#{signature_width}', cellspacing='0', cellpadding='0', border-spacing='0', style='#{font_styles};width:#{signature_width}px;margin:0;padding:0;')
+  tr
+    td(style='width:#{signature_width / 2}')
+      table(style='color:#{text_color}')
+        tr(style='cellpadding:0')
+          td(style='#{font_styles};padding-bottom: 7px;')
+            b(style='font-family:#{font_stack};font-size:#{font_size};color:#{text_color}')
+              span#name #{person_name}
+            if person_title
+              br
+              span#title #{person_title}
+            if company_name
+              br
+              span#company #{company_name}
+            br
+            |         
+            a#phone(style='#{font_styles_link};padding-bottom: 7px;text-decoration:none;', href='tel:#{phone_number_tel}') #{phone_number}
+            br
+            |         
+            a#url(href='//#{company_url}/', style='#{font_styles_link}') #{company_url}
+    |     
+    td(style='padding:0;padding:0;margin:0')
+      a(href='//#{company_url}/')
+        img(src='#{logo_image_url}', width='#{logo_width}', height='#{logo_height}', style='padding:0;margin:0;')
+
+script.
+  //pull data from URL string
+  function getQueryVariable(variable) {
+    var query = window.location.search.substring(1); // remove the leading "?" from query string, 
+                                                     // return just parameters and args 
+    var vars = query.split('&'); // split by each parameter
+
+    // loop through the parameters, separate out arguments, decode arguments into clean strings for display
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split('='); // delimiter based on URL query string
+        if (decodeURIComponent(pair[0]) == variable) {
+            /* replace "+" with "%20" before we decode the string so we don't overwrite
+            "+" that the user actually wants.  At this point true "+" are encoded as %2B. */
+            rawString = pair[1].split("+").join("%20")
+            cleanString = decodeURIComponent(rawString);
+            return cleanString;
+        }
+    }
+    console.log('Query variable %s not found', variable);
+  }
+
+  // return as simple variable names so its easy to read the next code blocks
+  var name = getQueryVariable('name'); 
+  var title = getQueryVariable('title'); 
+  var company = getQueryVariable('company');
+  var phone = getQueryVariable('phone'); 
+  var url = getQueryVariable('url');  
+
+
+  // update the DOM with data
+  // make sure to test for its existence so you don't break it if field is blank
+  if(name) { document.getElementById("name").innerHTML = name; }
+  if(title) { document.getElementById("title").innerHTML = title; }
+  if(company) { document.getElementById("company").innerHTML = company; }
+  if(phone) { 
+    phoneEl = document.getElementById("phone");
+    phoneEl.innerHTML = phone; 
+    phoneEl.setAttribute('href','tel:' + phone);
+  }
+  if(url) {
+     urlEL = document.getElementById("url");
+    urlEL.innerHTML = url;
+    urlEL.setAttribute('href', '//' + url);
+  }

@@ -1,0 +1,16 @@
+//- Simple footer template
+
+footer#pageFooter
+  p
+    | All logos and brand assets are © Copyright 
+    script(type='text/javascript').
+      document.write(new Date().getFullYear())
+    |  #{clientName} and may only be used with permission. All rights reserved.
+  p
+    | The #{clientName} word mark is a ® registered trademark with the US Patent and Trademark office.
+  p
+    a.logo(href='http://ripe.com', target='_blank')
+    | Brand designed and developed by 
+    a(href='http://ripe.com', target='_blank', title='ripe | Brading | Graphic Design | Web Design | Washington DC') ripe
+    | .
+    

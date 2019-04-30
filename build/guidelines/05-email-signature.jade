@@ -1,0 +1,23 @@
+//- Single column body content tamplate
+.guideline-wrapper#email-signature
+  .guideline-section
+    .col-sm-12
+      :markdown
+        ### Email Signature
+        This is a branded email signature for #{clientName}.  Click the link below and copy + paste into your email client.  
+        Please contact your IT support staff for help with changing the signature on your email client.  Here is a link with 
+        instructions for [Outlook](https://support.office.com/en-us/article/Change-an-email-signature-7db4abed-abe1-44aa-b423-38ab143427fa) 
+        and a [PDF](./brand-files/email-signature/how-to-add-email-signature.pdf) with instructions for Mac Mail, Gmail, and iOS
+  .guideline-section
+    .col-sm-5
+      h5 Create a personal signature:
+        small Add your details below to create a personalized email signature
+      form(id='generateEmailSig', action='brand-files/email-signature/email-signature.html', method='GET', target='_blank' )
+        input(name='name',type='text',placeholder='Your Name')
+        input(name='title',type='text',placeholder='Job Title')
+        input(name='phone',type='phone',placeholder='Phone Number')
+        input(type='submit',value='Generate Signature')
+      a(href='brand-files/email-signature/email-signature.html' target='_blank') View a sample email signature    
+    .col-sm-7
+      img(src='brand-files/email-signature/email-signature@2x.png', alt='Acceptable Configurations')
+  a.top(href='#top') »

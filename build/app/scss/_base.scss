@@ -1,0 +1,128 @@
+/*
+==========================================================================
+	BASE STYLES (scss/partials/_base.scss)
+==========================================================================
+*/
+*, *:after, *:before { // Global box sizing & font smoothing
+	@include border-box;
+	@include font-smoothing;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+	color: #222;
+}
+
+html, body {
+	background: #fafafa;
+	line-height: 1.5;
+}
+body {
+
+}
+a {
+	color: $brandColor-red;
+	text-decoration: none;
+	&:hover {
+		color: $brandColor;
+	}
+}
+
+a, a img, input[type=submit] {
+	@include transition(all,250ms);	
+}
+
+address {
+	font-style: normal;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+	background: $black;
+	text-shadow: none;
+	color: $white;
+}
+::selection {
+	background: $black;
+	text-shadow: none;
+	color: $white;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+audio,
+canvas,
+img,
+video { // Remove the gap between images, videos, audio and canvas and the bottom of their containers: h5bp.com/i/440
+	vertical-align: middle;
+}
+
+// Inputs & Forms
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+input[type=text], textarea, select, input[type=phone]{
+	padding: 10px 10px 9px 10px;
+	@include transition(all,300ms);
+	&:focus {
+		outline: 0;
+		border-color: #123;
+		@include transition(all,300ms);
+
+	}
+}
+
+input[type=submit] {
+	padding: 10px 25px;
+	background: #111;
+	border: 0;
+	color: $white;
+
+	&:hover {
+		opacity: 80%;
+	}
+}
+
+textarea {
+	resize: vertical;
+}
+
+
+.fill { // Fill items (usually links that need to take up 100% of their parent)
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.no-margin {
+	margin: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+		content: " "; /* 1 */
+		display: table; /* 2 */
+}
+.clearfix:after {
+		clear: both;
+}
+.clearfix {
+		*zoom: 1;
+}

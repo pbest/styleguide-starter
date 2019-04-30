@@ -1,0 +1,37 @@
+/*
+==========================================================================
+	FOOTER (scss/partials/_footer.scss)
+==========================================================================
+*/
+footer#pageFooter {
+  @include make-col;
+  @include make-col(12);
+  margin: 0 auto;
+  padding: 100px 20px;
+  float: none;
+  clear: both;
+  
+  color: $white;
+  background: $brandColor;
+  border-bottom: 1px solid $black-10;
+
+  p {
+    text-align: center;
+  }
+
+  a {
+    color: $white-60;
+
+    &.logo {
+      width: 20px;
+      height: 22px;
+      margin-right: 15px;
+      display: inline-block;
+
+      vertical-align: middle;
+
+      background: url(../brand-files/z-ripe-logo-20x20@2x.png) no-repeat;
+      background-size: 20px 20px;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+/*
+==========================================================================
+    TYPOGRAPHY 
+==========================================================================
+*/
+//
+
+h1 {
+    @include font-family-helvetica (700);
+    @include font-size-huge;
+    b, strong {
+        @include font-family-helvetica (1000);
+    }
+}
+h2 {
+    @include font-family-helvetica (300);
+    @include font-size-huge;
+    b, strong {
+        @include font-family-helvetica (700);
+    }
+}
+h3 {
+    @include font-family-helvetica (700);
+    @include font-size-large;
+    b, strong {
+        @include font-family-helvetica (1000);
+    }
+}
+h4 {
+    @include font-family-helvetica (300);
+    @include font-size-large;
+    b, strong {
+        @include font-family-helvetica (700);
+    }
+}
+h5 {
+    @include font-family-helvetica (300);
+    @include font-size-medium;
+    b, strong {
+        @include font-family-helvetica (1000);
+    }
+}
+h6 {
+    @include font-family-helvetica (300);
+    @include font-size-medium;
+    b, strong {
+        @include font-family-helvetica (700);
+    }
+}

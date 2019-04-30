@@ -1,0 +1,94 @@
+//
+//	BORDER BOX
+//
+@mixin border-box {
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+
+//
+//	FONT FAMILIES
+//
+// @mixin font-iconset {
+// 	font-family: 'Puesto-Iconset';
+// 	line-height: 1;
+// 	text-decoration: none;
+// 	text-shadow: none;
+// }
+@mixin font-family-helvetica ($weight) {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ 	font-weight: $weight;
+}
+
+//
+//	FONT SIZES
+//
+$huge: 48px;
+$large: 32px;
+$medium: 24px;
+$default: 18px;
+$small: 14px;
+$tiny: 12px;
+@mixin font-size-huge {
+	font-size: $huge;
+	line-height: $huge * 1.15;
+}
+@mixin font-size-large {
+	font-size: $large;
+	line-height: $large * 1.15;
+}
+@mixin font-size-medium {
+	font-size: $medium;
+	line-height: $medium * 1.15;
+}
+@mixin font-size-default {
+	font-size: $default;
+	line-height: $default * 1.15;
+}
+@mixin font-size-small {
+	font-size: $small;
+	line-height: $small * 1.15;
+}
+@mixin font-size-tiny {
+	font-size: $tiny;
+	line-height: $tiny * 1.15;
+}
+
+//
+//	MISC. FONT STUFF
+//
+@mixin text-shadow {
+	text-shadow: 1px 1px 5px $black-50;
+	filter: dropshadow(color=#000000, offx=1, offy=1);
+}
+
+@mixin font-smoothing {
+	-webkit-font-smoothing:antialiased;
+	-moz-font-smoothing:antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-o-font-smoothing:antialiased;
+	font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
+}
+
+//
+//	BACKGROUNDS
+//
+@mixin background-cover {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+//
+//	TRANSITIONS
+//
+@mixin transition($type,$length) {
+	-webkit-transition: $type $length ease-out;
+	-moz-transition: $type $length ease-out;
+	-ms-transition: $type $length ease-out;
+	-o-transition: $type $length ease-out;
+	transition: $type $length ease-out;
+}

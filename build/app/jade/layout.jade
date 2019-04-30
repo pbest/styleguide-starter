@@ -1,0 +1,94 @@
+doctype html
+//if lt IE 7
+  html.no-js.lt-ie9.lt-ie8.lt-ie7  
+//if IE 7
+  html.no-js.lt-ie9.lt-ie8  
+//if IE 8
+  html.no-js.lt-ie9 
+// [if gt IE 8] <!
+block applyClientBrand
+html.no-js
+  // <![endif]
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title #{clientName} | Style Guide
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // Place favicon.ico and apple-touch-icon.png in the root directory
+    link(rel='stylesheet', href='app/css/main.css')
+    style.
+      .small-link {
+      font-size: 16px;
+      line-height: 1;
+      }
+      header#pageHeader, header#pageHeader nav, footer#pageFooter {
+      background: #{headerBackgroundColor};
+      color: #{headerTextColor};
+      }
+      #pageHeader nav .nav li a {
+      color: #{headerTextColor} !important;
+      border-color: #{headerTextColor} !important;
+      }
+      #pageHeader nav .nav li a.active, header#pageHeader nav ul li a:hover {
+      background-color: #{headerTextColor} !important;
+      color: #{headerBackgroundColor} !important;
+      }
+      #pageHeader small, #pageHeader small a {
+      color: #{headerTextColor} !important;
+      opacity: .6;
+      }
+      #pageFooter a {
+      color: #{headerTextColor} !important;
+      opacity: .6;
+      }
+      input[type=submit] {
+      background-color: #{headerBackgroundColor} !important;
+      color: #{headerTextColor} !important;
+      }
+      a {
+      color: #{linkColor}
+      }
+      a:hover {
+      color: #{linkColorHover}
+      }
+      .nav-link.active {
+      color: #{headerBackgroundColor} !important
+      }
+      .top:hover{
+      background-color: #{headerBackgroundColor} !important
+      }
+      ::-moz-selection {
+      background-color: #{linkColor}
+      }
+      ::selection {
+      background-color: #{linkColor}
+      }
+      input[type=text]:focus, textarea:focus, select:focus, input[type=phone]:focus {
+      border-style: solid;
+      border-color: #{linkColor};
+      }
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/conditionizr.js/4.1.0/conditionizr.min.js')
+  body
+    //if lt IE 7
+      p.browsehappy
+        | You are using an 
+        strong outdated
+        |  browser. Please 
+        a(href='http://browsehappy.com/') upgrade your browser
+        |  to improve your experience.
+    a#top.container
+    article#wrapper
+    include page-header.jade
+    block content
+    include page-footer.jade
+
+    
+        
+    //-scrpts
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script.
+      window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\\/script>')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js')
+    script(src='app/js/main.js')
