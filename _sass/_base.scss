@@ -1,0 +1,49 @@
+// ====
+// Base
+// ====
+h1 {
+  @include responsive-text-size(mega);
+  margin-bottom: 0.93665em;
+}
+
+h2 {
+  @include responsive-text-size(kilo);
+  margin-bottom: 1.05337em;
+}
+
+h3 {
+  @include responsive-text-size(hecto);
+  margin-bottom: 1.18534em;
+}
+
+h4 {
+  @include responsive-text-size(deca);
+  margin-bottom: 1.33323em;
+}
+
+h5 {
+  @include responsive-text-size(base);
+  margin-bottom: 1.5em;
+}
+
+p {
+  @include responsive-text-size(base);
+  margin-bottom: 1.5em;
+}
+  
+small {
+  @include responsive-text-size(deci);
+  margin-bottom: 1.68781em;
+}
+
+img {
+  @include centre;
+  display: block;
+  margin-bottom: 2.0625em;
+}
+
+hr {
+  margin-bottom: 1.5em;
+}
+
+

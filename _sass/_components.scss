@@ -1,0 +1,70 @@
+// ==========
+// Components
+// ==========
+// Basic styling for site header
+.site-header {
+  padding: 1em;
+  background: grey;
+  color: white;
+  h1 {
+    margin: 0;
+  }
+}
+
+// Default button styles
+button,
+input[type="submit"],
+.button,
+a.button {
+  padding: 0.5em 1em;
+  transition: background-color .2s ease;
+  &:hover {
+    background-color: darken(silver, 10%);
+  }
+}
+
+// Disabled button styles
+a.button--disabled,
+.button--disabled {
+  color: grey;
+  &:hover,
+  &:active,
+  &:focus {
+    cursor: default;
+    background-color: silver;
+  }
+}
+
+.buttons {
+  .flex {
+    text-align: center;
+  }
+}
+
+// Colours and gradients used on the site
+.swatch {
+  height: 150px;
+  width: 150px;
+  margin: 0 1em 0.5em;
+  p {
+    line-height: 150px;
+    text-align: center;
+  }
+}
+
+.swatch-info {
+  margin: 0 1em 1em;
+  max-width: 150px;
+}
+
+@each $color-key, $color-value in $swatches {
+  .#{$color-key} {
+    background: $color-value;
+    color: text-color($color-value);
+  }
+}
+
+// For long blocks of placeholder text
+.content {
+  font-family: 'Redacted';
+}

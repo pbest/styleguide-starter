@@ -1,0 +1,139 @@
+// ========
+// Settings
+// ========
+
+// Susy settings
+@import '../node_modules/susy/sass/susy';
+$susy: (
+  global-box-sizing: border-box,
+);
+
+// Breakpoints
+@import 'lib/mappy-bp';
+$breakpoints: (
+  xsmall: 390px,
+  small: 480px,
+  medium: 768px,
+  large: 1280px,
+);
+
+$textpoints: (
+  small: 36.875em,
+  large: 48em,
+);
+
+// Fonts
+@font-face {
+  font-family: 'Redacted';
+  src: url('../fonts/redacted-script-regular.eot');
+  src: url('../fonts/redacted-script-regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/redacted-script-regular.woff2') format('woff2'),
+       url('../fonts/redacted-script-regular.woff') format('woff'),
+       url('../fonts/redacted-script-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Base font stacks
+$serif: Georgia, serif;
+$sans: Verdana, sans-serif;
+$mono: monospace;
+
+// Set typography sizes
+$text-sizing: (
+  deci: (
+    small: (
+      font-size: 1rem,
+      line-height: 1.5
+    ),
+    large: (
+      font-size: 1.222rem,
+      line-height: 1.5
+    )
+  ),
+  base: (
+    small: (
+      font-size: 1.125rem,
+      line-height: 1.5
+    ),
+    large: (
+      font-size: 1.375rem,
+      line-height: 1.5
+    )
+  ),
+  deca: (
+    small: (
+      font-size: 1.266rem,
+      line-height: 1.5
+    ),
+    large: (
+      font-size: 1.547rem,
+      line-height: 1.5
+    )
+  ),
+  hecto: (
+    small: (
+      font-size: 1.424rem,
+      line-height: 1.5
+    ),
+    large: (
+      font-size: 1.74rem,
+      line-height: 1.5
+    ),
+  ),
+  kilo: (
+    small: (
+      font-size: 1.602rem,
+      line-height: 1.5
+    ),
+    large: (
+      font-size: 1.958rem,
+      line-height: 1.5
+    ),
+  ),
+  mega: (
+    small: (
+      font-size: 1.802rem,
+      line-height: 1.5
+    ),
+    large: (
+      font-size: 2.202rem,
+      line-height: 1.5
+    ),
+  ),
+  giga: (
+    small: (
+      font-size: 2.027rem,
+      line-height: 1.5
+    ),
+    large: (
+      font-size: 2.478rem,
+      line-height: 1.5
+    ),
+  )
+);
+
+// Colours
+$colors: (
+  red: rgba(255, 0, 0, 1),
+  orange: rgba(255, 165, 0, 1),
+  yellow: rgba(255, 255, 0, 1),
+  green: rgba(0, 128, 0, 1),
+  blue: rgba(0, 0, 255, 1),
+  indigo: rgba(75, 0, 130, 1),
+  violet: rgba(238, 130, 238, 1)
+);
+
+$swatches: (
+  color1: red,
+  color2: orange,
+  color3: yellow,
+  color4: green,
+  color5: mediumblue,
+  color6: indigo,
+  color7: violet
+);
+
+// Z-index
+$layers: (
+);
